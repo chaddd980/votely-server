@@ -4,8 +4,9 @@ var router = express.Router();
 
 // post new poll
 router.post('/newPoll', function(req, res) {
+  console.log(req)
   var question = req.body.question;
-  var user = req.user.username
+  var user = req.body.user
   let optionsText = req.body.option
   var options = optionsText.split("\n")
   var optionsArray = []
@@ -24,7 +25,7 @@ router.post('/newPoll', function(req, res) {
     if(err) throw err
   })
   console.log("hi" + newPoll)
-  // res.json(newPoll)
+  res.json(newPoll)
 });
 
 // post new option
