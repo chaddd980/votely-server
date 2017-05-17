@@ -38,7 +38,7 @@ class Register extends Component {
   }
 
   postUser(user) {
-      axios.post('/users/register', user)
+      axios.post('https://vote-chaddly.herokuapp.com/users/register', user)
         .then(function(res){
         })
   }
@@ -56,7 +56,7 @@ class Register extends Component {
     let confirmPassword = this.state.confirmPassword;
     this.validPasswordCheck(password, confirmPassword)
     let user = { username: username, email: email, password: password, confirmPassword: confirmPassword }
-    axios.get(`http://localhost:3100/users/register/${username}`).then(function(res, rej) {
+    axios.get(`https://vote-chaddly.herokuapp.com/users/register${username}`).then(function(res, rej) {
       if (!res.data) {
         self.postUser(user)
         localStorage.setItem('user', user.username)
