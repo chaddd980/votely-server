@@ -24,7 +24,7 @@ router.post('/newPoll', function(req, res) {
     if(err) throw err
   })
   console.log("hi" + newPoll)
-  res.json(newPoll)
+  // res.json(newPoll)
 });
 
 // post new option
