@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 // post new poll
-router.post('/newpoll', function(req, res) {
+router.post('/newPoll', function(req, res) {
   var question = req.body.question;
   var user = req.user.username
   let optionsText = req.body.option
@@ -23,7 +23,7 @@ router.post('/newpoll', function(req, res) {
   newPoll.save(function(err){
     if(err) throw err
   })
-  console.log(newPoll)
+  console.log("hi" + newPoll)
   res.json(newPoll)
 });
 
